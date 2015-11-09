@@ -85,9 +85,15 @@ Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabl
 \\[2ex] 
 
 {\scshape Strain tensor} \\
+\begin{align*}
+\epsilon = \frac{1}{2}( (\nabla \mathbf{u} )^T + \nabla \mathbf{u}  ) 
+\end{align*}
 \\[2ex] 
 
 {\scshape Cauchy's equilibrium equation} \\
+\begin{align*}
+\mathbf{f_v} + \nabla \cdot \sigma^T = 0
+\end{align*}
 \\[2ex]
 
 {\scshape Hooke's law} \\
@@ -101,14 +107,23 @@ Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabl
 {\scshape Inverted Hooke's law} \\
 \\[2ex]
 
+{\scshape Equation of continuity} \\
+\begin{align*}
+\frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{u} = 0
+\end{align*}
+\\[2ex]
+
+{\scshape Navier's equation for elastic media in motion} \\
+\begin{align*}
+\frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla \nabla \cdot \mathbf{u} + \mathbf{f_v}
+\end{align*}
+\\[1ex] 
+Comment: For mechanical equilibrium set LHS. equal to zero. 
+\\[2ex]
+
 {\scshape Lamè coefficients} \\
 \\[2ex]
 
-{\scshape Equation of continuity} \\
-\\[2ex]
-
-{\scshape Equation of motion for media under stress} \\
-\\[2ex]
 
 \end{document}
 
