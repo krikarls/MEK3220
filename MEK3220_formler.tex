@@ -80,8 +80,7 @@ emphstyle={\color{self}\slshape},
                	 	\frac{\partial u_z}{ \partial x} & \frac{\partial u_z}{ \partial y} &\frac{\partial u_z}{ \partial z}     
 \end{pmatrix}
 \end{align*}
-\\[1ex] 
-Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabla \mathbf{u} = \epsilon $, the \emph{strain tensor}.
+\hspace{1cm} Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabla \mathbf{u} = \epsilon $, the \emph{strain tensor}.
 \\[2ex] 
 
 {\scshape Strain tensor} \\
@@ -100,7 +99,7 @@ Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabl
 \begin{align*}
 \{\sigma \} = \lambda (\nabla \cdot \mathbf{u}) I + \mu \epsilon
 \end{align*}
-or 
+\hspace{1cm} or
 \begin{align*}
 \sigma_{xx} = (2\mu + \lambda) \epsilon_{xx} + \lambda (\epsilon_{yy} + \epsilon_{zz}), \quad \sigma_{yz} = \sigma_{zy} = 2 \mu \epsilon_{yz} \\
 \sigma_{yy} = (2\mu + \lambda) \epsilon_{yy} + \lambda (\epsilon_{xx} + \epsilon_{zz}), \quad \sigma_{xz} = \sigma_{zx} = 2 \mu \epsilon_{xz}  \\
@@ -115,7 +114,7 @@ or
 \begin{align*}
 \frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla \nabla \cdot \mathbf{u} + \mathbf{f_v}
 \end{align*}
-\\[1ex] 
+
 Comment: For mechanical equilibrium set LHS. equal to zero. 
 \\[2ex]
 
@@ -149,17 +148,20 @@ Comment: For mechanical equilibrium set LHS. equal to zero.
 \end{align*}
 \\[2ex]
 
-{\scshape Viscous shear stress} \\
+{\scshape Isotropic viscous stress} \\
+\begin{align*}
+\sigma = pressure + \textit{shear stress} =  (-p)I + \mu ((\nabla \mathbf{v} )^T + \nabla \mathbf{v}  )
+\end{align*}
 \\[2ex]
 
 {\scshape Energy equations} \\
 
-Kinetic energy(per volume) for fluid:
+\underline{Kinetic energy}(per volume) for fluid:
 \begin{align*}
 E_k = \frac{1}{2} \rho \mathbf{v}^2 = \frac{1}{2} \rho (u^2 + v^2 + w^2) 
 \end{align*}
 
-Work done by wall(at $y=h$ with length: $L$) from shear stress($\sigma_{xy}$) on fluid:
+\underline{Work} done by wall(at $y=h$ with length: $L$) from shear stress($\sigma_{xy}$) on fluid:
 \begin{align*}
 W = U(h) L \sigma_{xy}(h)
 \end{align*}
