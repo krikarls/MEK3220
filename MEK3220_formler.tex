@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,twoside,reqno]{amsart}
+\documentclass[11pt,a4paper,english]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 %\usepackage{babel}
@@ -98,6 +98,10 @@ Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabl
 
 {\scshape Hooke's law} \\
 \begin{align*}
+\{\sigma \} = \lambda (\nabla \cdot \mathbf{u}) I + \mu \epsilon
+\end{align*}
+or 
+\begin{align*}
 \sigma_{xx} = (2\mu + \lambda) \epsilon_{xx} + \lambda (\epsilon_{yy} + \epsilon_{zz}), \quad \sigma_{yz} = \sigma_{zy} = 2 \mu \epsilon_{yz} \\
 \sigma_{yy} = (2\mu + \lambda) \epsilon_{yy} + \lambda (\epsilon_{xx} + \epsilon_{zz}), \quad \sigma_{xz} = \sigma_{zx} = 2 \mu \epsilon_{xz}  \\
 \sigma_{zz} = (2\mu + \lambda) \epsilon_{zz} + \lambda (\epsilon_{yy} + \epsilon_{zz}), \quad \sigma_{xy} = \sigma_{yx} = 2 \mu \epsilon_{xy} 
@@ -105,12 +109,6 @@ Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabl
 \\[2ex]
 
 {\scshape Inverted Hooke's law} \\
-\\[2ex]
-
-{\scshape Equation of continuity} \\
-\begin{align*}
-\frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{u} = 0
-\end{align*}
 \\[2ex]
 
 {\scshape Navier's equation for elastic media in motion} \\
@@ -123,6 +121,51 @@ Comment: For mechanical equilibrium set LHS. equal to zero.
 
 {\scshape Lamè coefficients} \\
 \\[2ex]
+
+{\scshape Beam equations} \\
+
+\emph{Euler-Bernoulli} and some additional important relations
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.15]{figures/beam.png}
+\end{figure}
+
+
+\begin{align*}
+\frac{d^2 w(x)}{dx^2} = - \frac{M_y (x)}{EI}, \quad \frac{dM_y(x)}{dx} = F_z, \quad \frac{dF_z}{dx} = - F_{ext}^{(z)} 
+\end{align*}
+\\[2ex]
+
+{\scshape Equation of continuity} \\
+\begin{align*}
+\frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{v} = 0
+\end{align*}
+\\[2ex]
+
+{\scshape Navier-Stokes} \\
+\begin{align*}
+\frac{d \mathbf{v}}{dt} + (\mathbf{v} \cdot \nabla)\mathbf{v} = \mathbf{g} - \frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{v}, \quad \nabla \cdot \mathbf{v} = 0  
+\end{align*}
+\\[2ex]
+
+{\scshape Viscous shear stress} \\
+\\[2ex]
+
+{\scshape Energy equations} \\
+
+Kinetic energy(per volume) for fluid:
+\begin{align*}
+E_k = \frac{1}{2} \rho \mathbf{v}^2 = \frac{1}{2} \rho (u^2 + v^2 + w^2) 
+\end{align*}
+
+Work done by wall(at $y=h$ with length: $L$) from shear stress($\sigma_{xy}$) on fluid:
+\begin{align*}
+W = U(h) L \sigma_{xy}(h)
+\end{align*}
+
+[add figure]
+
 
 
 \end{document}
