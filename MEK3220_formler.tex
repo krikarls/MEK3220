@@ -93,11 +93,11 @@ emphstyle={\color{self}\slshape},
 \begin{align*}
 \mathbf{f_v} + \nabla \cdot \sigma^T = 0
 \end{align*}
-\\[2ex]
+\\[1ex]
 
 {\scshape Hooke's law} \\
 \begin{align*}
-\{\sigma \} = \lambda (\nabla \cdot \mathbf{u}) I + \mu \epsilon
+\sigma  = \lambda (\nabla \cdot \mathbf{u}) I + \mu \epsilon
 \end{align*}
 \hspace{1cm} or
 \begin{align*}
@@ -108,6 +108,9 @@ emphstyle={\color{self}\slshape},
 \\[2ex]
 
 {\scshape Inverted Hooke's law} \\
+\begin{align*}
+u_{ij} = \nabla \cdot \mathbf{u} = \frac{1+\nu}{E}\sigma - \frac{\nu}{E}I \sum_k \sigma_{kk}
+\end{align*}
 \\[2ex]
 
 {\scshape Navier's equation for elastic media in motion} \\
