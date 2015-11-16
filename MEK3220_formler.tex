@@ -113,6 +113,31 @@ emphstyle={\color{self}\slshape},
 \end{align*}
 \\[2ex]
 
+{\scshape Stress relations} \\
+
+\noindent
+Let the stress be given by $\sigma$, a plane denoted $q$ and its normal be $\mathbf{n}$. Then we have the following relations:
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{figures/stressplane.png}
+\end{figure}
+
+\underline{Stress on surface} (red)
+\begin{align*}
+\mathbf{\sigma}_q =\sigma \cdot \mathbf{n}
+\end{align*}
+
+\underline{Normal stress on surface} (light blue)
+\begin{align*}
+\mathbf{\sigma}_{q(n)} =\mathbf{\sigma}_q \cdot \mathbf{n}
+\end{align*}
+
+\underline{Shear stress on surface} (blue)
+\begin{align*}
+\boldmath{\sigma}_{q(s)} =\mathbf{\sigma}_q -\mathbf{\sigma}_{q(n)} \mathbf{n}
+\end{align*}
+\\[2ex]
+
 {\scshape Navier's equation for elastic media in motion} \\
 \begin{align*}
 \frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla \nabla \cdot \mathbf{u} + \mathbf{f_v}
