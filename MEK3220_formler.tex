@@ -153,7 +153,7 @@ Comment: For mechanical equilibrium set LHS. equal to zero.
 
 {\scshape Isotropic viscous stress} \\
 \begin{align*}
-\sigma = pressure + \textit{shear stress} =  (-p)I + \mu ((\nabla \mathbf{v} )^T + \nabla \mathbf{v}  )
+\sigma = pressure + \textit{shear stress} =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
 \end{align*}
 \\[2ex]
 
@@ -169,11 +169,9 @@ E_k = \frac{1}{2} \rho \mathbf{v}^2 = \frac{1}{2} \rho (u^2 + v^2 + w^2)
 W = U(h) L \sigma_{xy}(h)
 \end{align*}
 
-[add figure]
-
 \underline{Dissipation}
 \begin{align*}
-\Delta = 2 \mu  ((\nabla \mathbf{v} )^T + \nabla \mathbf{v}  )^2
+\Delta = 2 \mu [\frac{1}{2} (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  ) ]^2
 \end{align*}
 
 
