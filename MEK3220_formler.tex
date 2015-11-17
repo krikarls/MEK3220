@@ -147,7 +147,14 @@ Comment: For mechanical equilibrium set LHS. equal to zero.
 \\[2ex]
 
 {\scshape Lamè coefficients} \\
-\\[2ex]
+\begin{align*}
+E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambda + \mu)}
+\end{align*}
+\begin{align*}
+\lambda = \frac{E \nu}{(1-2\nu)(1+\nu)}, \quad \mu = \frac{E}{2(1+\nu)}
+\end{align*}
+
+\newpage
 
 {\scshape Beam equations} \\
 
@@ -168,19 +175,16 @@ Comment: For mechanical equilibrium set LHS. equal to zero.
 \begin{align*}
 \frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{v} = 0
 \end{align*}
-\\[2ex]
 
 {\scshape Navier-Stokes} \\
 \begin{align*}
 \frac{d \mathbf{v}}{dt} + (\mathbf{v} \cdot \nabla)\mathbf{v} = \mathbf{g} - \frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{v}, \quad \nabla \cdot \mathbf{v} = 0  
 \end{align*}
-\\[2ex]
 
 {\scshape Isotropic viscous stress} \\
 \begin{align*}
 \sigma = pressure + \textit{shear stress} =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
 \end{align*}
-\\[2ex]
 
 {\scshape Energy equations} \\
 
