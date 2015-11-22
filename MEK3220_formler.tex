@@ -99,11 +99,13 @@ emphstyle={\color{self}\slshape},
 \begin{align*}
 \sigma  = \lambda I \sum_k \epsilon_{kk} + 2\mu \epsilon 
 \end{align*}
-\hspace{1cm} or
+
+{\scshape Lamè coefficients} \\
 \begin{align*}
-\sigma_{xx} = (2\mu + \lambda) \epsilon_{xx} + \lambda (\epsilon_{yy} + \epsilon_{zz}), \quad \sigma_{yz} = \sigma_{zy} = 2 \mu \epsilon_{yz} \\
-\sigma_{yy} = (2\mu + \lambda) \epsilon_{yy} + \lambda (\epsilon_{xx} + \epsilon_{zz}), \quad \sigma_{xz} = \sigma_{zx} = 2 \mu \epsilon_{xz}  \\
-\sigma_{zz} = (2\mu + \lambda) \epsilon_{zz} + \lambda (\epsilon_{yy} + \epsilon_{zz}), \quad \sigma_{xy} = \sigma_{yx} = 2 \mu \epsilon_{xy} 
+E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambda + \mu)}
+\end{align*}
+\begin{align*}
+\lambda = \frac{E \nu}{(1-2\nu)(1+\nu)}, \quad \mu = \frac{E}{2(1+\nu)}
 \end{align*}
 \\[2ex]
 
@@ -140,19 +142,11 @@ Let the stress be given by $\sigma$, a plane denoted $q$ and its normal be $\mat
 
 {\scshape Navier's equation for elastic media in motion} \\
 \begin{align*}
-\frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla \nabla \cdot \mathbf{u} + \mathbf{f_v}
+\frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla ( \nabla \cdot \mathbf{u}) + \mathbf{f_v}
 \end{align*}
 
 Comment: For mechanical equilibrium set LHS. equal to zero. 
 \\[2ex]
-
-{\scshape Lamè coefficients} \\
-\begin{align*}
-E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambda + \mu)}
-\end{align*}
-\begin{align*}
-\lambda = \frac{E \nu}{(1-2\nu)(1+\nu)}, \quad \mu = \frac{E}{2(1+\nu)}
-\end{align*}
 
 \newpage
 
