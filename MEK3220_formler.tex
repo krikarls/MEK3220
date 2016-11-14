@@ -1,8 +1,6 @@
 \documentclass[11pt,a4paper,english]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{babel}
-%\usepackage{fancyhdr}
 \usepackage{amsfonts,amsmath,amssymb,pifont,enumerate,graphicx,textcomp,varioref,algpseudocode,listings}
 \usepackage[margin=1in,footskip=0.25in]{geometry}
 
@@ -12,67 +10,16 @@
 \hbadness = \tolerance 
 \pretolerance = 2000 
 
+\usepackage{wrapfig}
 \usepackage{color}
 \usepackage{listings}
 \usepackage{setspace}
 \usepackage{framed}
 
-\definecolor{Code}{rgb}{0,0,0}
-\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
-\definecolor{Numbers}{rgb}{0.5,0,0}
-\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
-\definecolor{Keywords}{rgb}{0,0,1}
-\definecolor{self}{rgb}{0,0,0}
-\definecolor{Strings}{rgb}{0,0.63,0}
-\definecolor{Comments}{rgb}{0,0.63,1}
-\definecolor{Backquotes}{rgb}{0,0,0}
-\definecolor{Classname}{rgb}{0,0,0}
-\definecolor{FunctionName}{rgb}{0,0,0}
-\definecolor{Operators}{rgb}{0,0,0}
-\definecolor{Background}{rgb}{0.98,0.98,0.98}
-
-\lstnewenvironment{python}[1][]{
-\lstset{
-numbers=left,
-numberstyle=\footnotesize,
-numbersep=1em,
-xleftmargin=1em,
-framextopmargin=2em,
-framexbottommargin=2em,
-showspaces=false,
-showtabs=false,
-showstringspaces=false,
-frame=l,
-tabsize=4,
-% Basic
-basicstyle=\ttfamily\small\setstretch{1},
-backgroundcolor=\color{Background},
-language=Python,
-% Comments
-commentstyle=\color{Comments}\slshape,
-% Strings
-stringstyle=\color{Strings},
-morecomment=[s][\color{Strings}]{"""}{"""},
-morecomment=[s][\color{Strings}]{'''}{'''},
-% keywords
-morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
-keywordstyle={\color{Keywords}\bfseries},
-% additional keywords
-morekeywords={[2]@invariant},
-keywordstyle={[2]\color{Decorators}\slshape},
-emph={self},
-emphstyle={\color{self}\slshape},
-%
-}}{}
-
-\lstset{keywordstyle=\color{kewwords},backgroundcolor=\color{mygray},basicstyle=\footnotesize\ttfamily,breaklines=true,commentstyle=\color{mygray},language=Python,firstline=1,lastline=53,frame=single,numbers=left,numberstyle=\tiny\color{mygray}}
-
-
 \begin{document}
 \maketitle
 
-{\scshape The displacement gradient} \\
-
+{\scshape The displacement gradient} 
 \begin{align*}
 \nabla \mathbf{u} = 
 \begin{pmatrix}	    \frac{\partial u_x}{ \partial x} & \frac{\partial u_x}{ \partial y} & \frac{\partial u_x}{ \partial z}      \\
@@ -80,105 +27,57 @@ emphstyle={\color{self}\slshape},
                	 	\frac{\partial u_z}{ \partial x} & \frac{\partial u_z}{ \partial y} &\frac{\partial u_z}{ \partial z}     
 \end{pmatrix}
 \end{align*}
-\hspace{1cm} Comment: If $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabla \mathbf{u} = \epsilon $, the \emph{strain tensor}.
-\\[2ex] 
+\hspace{1cm} For $ \nabla \mathbf{u} =  ( \nabla \mathbf{u})^T  $ we have that $\nabla \mathbf{u} = \epsilon $, the \emph{strain tensor}.\\
 
-{\scshape Strain tensor} \\
+{\scshape Strain tensor} 
 \begin{align*}
-\epsilon = \frac{1}{2}( (\nabla \mathbf{u} )^T + \nabla \mathbf{u}  ) 
-\end{align*}
-\\[2ex] 
-
-{\scshape Cauchy's equilibrium equation} \\
-\begin{align*}
-\mathbf{f_v} + \nabla \cdot \sigma^T = 0
-\end{align*}
-\\[1ex]
-
-{\scshape Hooke's law} \\
-\begin{align*}
-\sigma  = \lambda I \sum_k \epsilon_{kk} + 2\mu \epsilon 
+\epsilon = \frac{1}{2}(\nabla \mathbf{u} + \nabla \mathbf{u}^T  ) 
 \end{align*}
 
-{\scshape Lamè coefficients} \\
+{\scshape Hooke's law} 
 \begin{align*}
-E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambda + \mu)}
-\end{align*}
-\begin{align*}
-\lambda = \frac{E \nu}{(1-2\nu)(1+\nu)}, \quad \mu = \frac{E}{2(1+\nu)}
-\end{align*}
-\\[2ex]
-
-{\scshape Inverted Hooke's law} \\
-\begin{align*}
-\epsilon = \frac{1+\nu}{E}\sigma - \frac{\nu}{E}I \sum_k \sigma_{kk}
-\end{align*}
-\\[2ex]
-
-{\scshape Stress relations} \\
-
-\noindent
-Let the stress be given by $\sigma$, a plane denoted $q$ and its normal be $\mathbf{n}$. Then we have the following relations:
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{figures/stressplane.png}
-\end{figure}
-
-\underline{Stress on surface} (red)
-\begin{align*}
-\vec{\sigma}_q =\sigma \cdot \mathbf{n}
+\sigma  = \lambda tr(\epsilon) I + 2\mu \epsilon 
 \end{align*}
 
-\underline{Normal stress on surface} (light blue)
+{\scshape Inverted Hooke's law} 
 \begin{align*}
-\mathbf{\sigma}_{q(n)} =\vec{\sigma}_q \cdot \mathbf{n}
+\epsilon = \frac{1+\nu}{E}\sigma - \frac{\nu}{E} tr(\sigma)I
 \end{align*}
 
-\underline{Shear stress on surface} (blue)
+{\scshape Cauchy's equilibrium equation} 
 \begin{align*}
-\vec{\sigma}_{q(s)} =\vec{\sigma}_q -\mathbf{\sigma}_{q(n)} \mathbf{n}
+\mathbf{f_v} + \nabla \cdot \sigma = 0
 \end{align*}
-\\[2ex]
+
+{\scshape Equation of continuity} 
+\begin{align*}
+\frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{v} = 0
+\end{align*}
+
+{\scshape Isotropic viscous stress} 
+\begin{align*}
+\sigma = pressure + \textit{shear stress} =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
+\end{align*}
+
+{\scshape Navier-Stokes} 
+\begin{align*}
+\frac{d \mathbf{v}}{dt} + (\mathbf{v} \cdot \nabla)\mathbf{v} = \mathbf{g} - \frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{v}, \quad \nabla \cdot \mathbf{v} = 0  
+\end{align*}
 
 {\scshape Navier's equation for elastic media in motion} \\
 \begin{align*}
 \frac{\partial^2 \mathbf{u}}{\partial t^2} = \mu \nabla^2 \mathbf{u} + (\lambda + \mu) \nabla ( \nabla \cdot \mathbf{u}) + \mathbf{f_v}
 \end{align*}
 
-Comment: For mechanical equilibrium set LHS. equal to zero. 
-\\[2ex]
-
-\newpage
-
-{\scshape Beam equations} \\
-
-\emph{Euler-Bernoulli} and some additional important relations
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.15]{figures/beam.png}
-\end{figure}
-
-
+{\scshape Lamè coefficients} 
 \begin{align*}
-\frac{d^2 w(x)}{dx^2} = - \frac{M_y (x)}{EI}, \quad \frac{dM_y(x)}{dx} = F_z, \quad \frac{dF_z}{dx} = - F_{ext}^{(z)} 
+E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambda + \mu)}
 \end{align*}
-\\[2ex]
-
-{\scshape Equation of continuity} \\
 \begin{align*}
-\frac{\partial \rho}{\partial t} + \nabla \cdot  \rho \mathbf{v} = 0
+\lambda = \frac{E \nu}{(1-2\nu)(1+\nu)}, \quad \mu = \frac{E}{2(1+\nu)}
 \end{align*}
 
-{\scshape Navier-Stokes} \\
-\begin{align*}
-\frac{d \mathbf{v}}{dt} + (\mathbf{v} \cdot \nabla)\mathbf{v} = \mathbf{g} - \frac{1}{\rho} \nabla p + \nu \nabla^2 \mathbf{v}, \quad \nabla \cdot \mathbf{v} = 0  
-\end{align*}
-
-{\scshape Isotropic viscous stress} \\
-\begin{align*}
-\sigma = pressure + \textit{shear stress} =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
-\end{align*}
+\vspace{1cm}
 
 {\scshape Energy equations} \\
 
@@ -201,6 +100,45 @@ W = U(h) L \sigma_{xy}(h)
 \begin{align*}
 \rho c \left(\frac{\partial T}{\partial t} + (\mathbf{v} \cdot \nabla)T \right) = k \nabla^2 T + h + \Delta 
 \end{align*}
+
+\vspace{1cm}
+
+{\scshape Stress relations} \\
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+\centering
+\includegraphics[width=0.35\textwidth]{figures/stressplane.png}
+\end{wrapfigure}
+
+\underline{Stress on surface} (red)
+\begin{align*}
+\mathbf{t} =\sigma \cdot \mathbf{n}
+\end{align*}
+
+\underline{Normal stress on surface} (light blue)
+\begin{align*}
+\sigma_{n} =\mathbf{t} \cdot \mathbf{n} \\ 
+\mathbf{t}_n = \sigma_{n} \mathbf{n}
+\end{align*}
+
+\underline{Shear stress on surface} (blue)
+\begin{align*}
+\mathbf{t}_t = \mathbf{t} - \mathbf{t}_n 
+\end{align*}
+
+
+%{\scshape Beam equations} \\
+%
+%\emph{Euler-Bernoulli} and some additional important relations
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[scale=0.15]{figures/beam.png}
+%\end{figure}
+%
+%\begin{align*}
+%\frac{d^2 w(x)}{dx^2} = - \frac{M_y (x)}{EI}, \quad \frac{dM_y(x)}{dx} = F_z, \quad \frac{dF_z}{dx} = - F_{ext}^{(z)} 
+%\end{align*}
 
 
 \end{document}
