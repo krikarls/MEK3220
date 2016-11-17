@@ -36,7 +36,7 @@
 
 {\scshape Hooke's law} 
 \begin{align*}
-\sigma  = \lambda tr(\epsilon) I + 2\mu \epsilon 
+\sigma  = \lambda tr(\epsilon) I + 2\mu \epsilon =  \lambda (\nabla \cdot \mathbf{u}) I + 2\mu \epsilon
 \end{align*}
 
 {\scshape Inverted Hooke's law} 
@@ -56,7 +56,7 @@
 
 {\scshape Isotropic viscous stress} 
 \begin{align*}
-\sigma = pressure + \textit{shear stress} =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
+\sigma = pressure + \textit{shear stress}(\tau) =  (-p)I + \mu (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  )
 \end{align*}
 
 {\scshape Navier-Stokes} 
@@ -81,6 +81,11 @@ E=\mu \frac{3\lambda + 2\mu}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2(\lambd
 
 {\scshape Energy equations} \\
 
+\underline{Heat transfer equation}
+\begin{align*}
+\rho c \left(\frac{\partial T}{\partial t} + (\mathbf{v} \cdot \nabla)T \right) = k \nabla^2 T + \Delta 
+\end{align*}
+
 \underline{Kinetic energy}(per volume) for fluid:
 \begin{align*}
 E_k = \frac{1}{2} \rho \mathbf{v}^2 = \frac{1}{2} \rho (u^2 + v^2 + w^2) 
@@ -93,12 +98,7 @@ W = U(h) L \sigma_{xy}(h)
 
 \underline{Dissipation}
 \begin{align*}
-\Delta = 2 \mu [\frac{1}{2} (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  ) ]^2
-\end{align*}
-
-\underline{Heat transfer equation}
-\begin{align*}
-\rho c \left(\frac{\partial T}{\partial t} + (\mathbf{v} \cdot \nabla)T \right) = k \nabla^2 T + h + \Delta 
+\Delta = 2 \mu [\frac{1}{2} (\nabla \mathbf{v}  + \nabla \mathbf{v}^T  ) ]^2 = \tau : \nabla \mathbf{v}
 \end{align*}
 
 \vspace{1cm}
